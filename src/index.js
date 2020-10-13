@@ -1,5 +1,5 @@
-import http from "axios";
-import htmlToText from "html-to-text";
+import http from 'axios'
+import htmlToText from 'html-to-text'
 
 /**
  * A wikipedia article
@@ -31,27 +31,27 @@ import htmlToText from "html-to-text";
  */
 export const search = async (keyword, language) => {
   const axios = http.create({
-    baseURL: `https://${language || "en"}.wikipedia.org`,
-  });
-  const res = await axios.get(`/w/api.php`, {
+    baseURL: `https://${language || 'en'}.wikipedia.org`
+  })
+  const res = await axios.get('/w/api.php', {
     params: {
-      action: "query",
-      format: "json",
-      list: "search",
+      action: 'query',
+      format: 'json',
+      list: 'search',
       srsearch: keyword,
-      prop: "info",
-      inprop: "url",
-    },
-  });
-  const results = [];
+      prop: 'info',
+      inprop: 'url'
+    }
+  })
+  const results = []
   res.data.query.search.forEach((result) => {
-    result.textSnippet = htmlToText.fromString(result.snippet);
+    result.textSnippet = htmlToText.fromString(result.snippet)
     result.url = `${axios.defaults.baseURL}/wiki/${result.title.replace(
-      " ",
-      "_"
-    )}`;
-    result.htmlSnippet = result.snippet;
-    results.push(result);
-  });
-  return results;
-};
+      ' ',
+      '_'
+    )}`
+    result.htmlSnippet = result.snippet
+    results.push(result)
+  })
+  return results
+}
