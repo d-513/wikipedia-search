@@ -26,11 +26,13 @@ jobs:
           node-version: 12
       - run: yarn install
       - run: yarn run fix
+      - run: git pull
       - run: git add .
-      - run: "git commit -a -m \"Fix with standard\" || :"
+      - run: 'git commit -a -m "Fix with standard" || :'
       - run: git push
   doc:
     runs-on: ubuntu-latest
+    needs: fix
     steps:
       - name: Install git
         run: |
@@ -43,8 +45,9 @@ jobs:
           node-version: 12
       - run: yarn install
       - run: yarn run doc
+      - run: git pull
       - run: git add .
-      - run: "git commit -a -m \"Update JSDoc\" || :"
+      - run: 'git commit -a -m "Update JSDoc" || :'
       - run: git push
   publish-npm:
     needs: [test, fix]
