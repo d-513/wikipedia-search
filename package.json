@@ -1,9 +1,9 @@
 {
   "name": "@dada513/wikipedia-search",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Search wikipedia in node.js",
   "main": "esm.js",
-  "repository": "https://github.com/dada513/package",
+  "repository": "https://github.com/dada513/wikipedia-search",
   "author": "dada513",
   "scripts": {
     "doc": "jsdoc src -r -d docs README.md",
