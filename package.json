@@ -1,7 +1,7 @@
 {
-  "name": "@dada513/package-template",
+  "name": "@dada513/wikipedia-search",
   "version": "1.0.0",
-  "description": "your-description",
+  "description": "Search wikipedia in node.js",
   "main": "esm.js",
   "repository": "https://github.com/dada513/package",
   "author": "dada513",
@@ -14,7 +14,9 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "esm": "^3.2.25"
+    "axios": "^0.20.0",
+    "esm": "^3.2.25",
+    "html-to-text": "^5.1.1"
   },
   "devDependencies": {
     "jsdoc": "^3.6.6",

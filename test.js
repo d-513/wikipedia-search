@@ -1,4 +1,8 @@
-const myPackage = require('./esm')
+const wikipedia = require("./esm");
 
-console.log(myPackage.hello())
-console.log(myPackage.hello('NPM'))
+async function app() {
+  const res = await wikipedia.search("Hello, world", "en");
+  console.log(res);
+}
+
+app();
