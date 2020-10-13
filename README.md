@@ -1,6 +1,7 @@
 # wikipedia-search
 
-Simple wikipedia search module.
+Simple wikipedia search module.  
+NPM: https://www.npmjs.com/package/@dada513/wikipedia-search
 
 ### Installation
 
@@ -11,9 +12,14 @@ yarn add @dada513/wikipedia-search # or npm install @dada513/wikipedia-search
 ### Usage
 
 ```js
-// TODO: Provide example code
-const myPackage = require("package");
-myPackage.doStuff();
+const wikipedia = require("./esm");
+
+async function app() {
+  const res = await wikipedia.search("Hello, world", "en");
+  console.log(res);
+}
+
+app();
 ```
 
 ### API
